@@ -5,6 +5,8 @@
 ### 使用方法
 
 ```bash
+#全局安装
+npm install uglify-tool -g
 # 批量压缩
 ug src dest
 #单个压缩

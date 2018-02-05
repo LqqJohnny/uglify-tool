@@ -1,0 +1,13 @@
+{
+  "name": "uglify-tool",
+  "version": "0.1.0",
+  "description": "test",
+  "license": "MIT",
+  "bin": {
+    "ug": "./bin/ug.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "node-minify": "^2.4.1"
+  }
+}

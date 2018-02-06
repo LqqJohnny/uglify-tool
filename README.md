@@ -2,6 +2,9 @@
 
 用来压缩 js 代码 和 css 代码的命令行工具，使用 `node-minify` 对文件进行压缩
 
+项目github地址 ： [uglify-tool](https://github.com/LqqJohnny/uglify-tool)
+
+
 ### 使用方法
 
 ```bash

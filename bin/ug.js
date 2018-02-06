@@ -84,33 +84,21 @@ function ugOneFile(src,dest){
 }
 
 function ugFilesInDic(src,dest){
-
+  console.log(dest);
   let files=fs.readdirSync(src);
   files.forEach((val,index) => {
       let fPath=path.join(src,val); // 用于分析是否是 文件夹 返回的数据用的是 val
       let stats=fs.statSync(fPath);
       if(stats.isDirectory()){
-        ugFilesInDic(fPath);
+        var newFolder = path.join(dest,val);
+        if (!fs.existsSync(newFolder)) {
+              console.log("创建文件夹："+ newFolder);
+              fs.mkdirSync(newFolder);
+        }
+        ugFilesInDic(fPath,path.join(dest,val));
       }
       if(stats.isFile()){
           ugOneFile(fPath,path.join(dest,val));
       }
   });
-}
-
-function findSync(startPath) {
-    let result=[];
-    var path = startPath;
-    let files=fs.readdirSync(path);
-    files.forEach((val,index) => {
-        let fPath=join(path,val); // 用于分析是否是 文件夹 返回的数据用的是 val
-        let stats=fs.statSync(fPath);
-        var pa = fPath.replace(/public\\vedios\\/,"");
-        if(stats.isDirectory()) {result.unshift({type:"directory",name:val,path:pa})};
-        if(stats.isFile()){
-          console.log("压缩：" +fpath);
-            result.push({type:"file", name:val, path:pa});
-        }
-    });
-    return result;
 }

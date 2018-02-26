@@ -6,7 +6,7 @@
 
 
 ### 使用方法
-
+ 
 ```bash
 #全局安装
 npm install uglify-tool -g
